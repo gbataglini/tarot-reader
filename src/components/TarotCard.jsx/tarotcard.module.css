@@ -1,0 +1,85 @@
+.cardBackground {
+  background-color: transparent;
+  color: white;
+  width: 400px;
+  min-width: 400px;
+  height: 600px;
+  text-align: center;
+  position: relative;
+  perspective: 1000px;
+  margin: 5%;
+}
+
+.flipCardInner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+}
+
+.cardBackground:hover .flipCardInner {
+  transform: rotateY(180deg);
+}
+
+.flipCardFront,
+.flipCardBack {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+  background-color: rgb(205, 196, 220);
+}
+
+.flipCardFront {
+  color: black;
+  width: 100%;
+  height: 100%;
+}
+
+.flipCardBack {
+  color: black;
+  transform: rotateY(180deg);
+  width: 105%;
+  height: 100%;
+}
+
+.cardNumber {
+  font-size: 20px;
+}
+
+.cardTitle {
+  position: absolute;
+  width: 60%;
+  left: 19%;
+  top: 12%;
+  font-size: x-large;
+  font-variant: small-caps;
+}
+
+.isReversed {
+  position: absolute;
+  width: 60%;
+  left: 19%;
+  top: 21%;
+  font-size: small;
+  font-variant: small-caps;
+}
+
+.cardDescriptionReversed {
+  position: absolute;
+  width: 50%;
+  left: 25%;
+  top: 25%;
+  font-size: medium;
+}
+
+.cardDescription {
+  position: absolute;
+  width: 50%;
+  left: 25%;
+  top: 20%;
+  font-size: medium;
+}

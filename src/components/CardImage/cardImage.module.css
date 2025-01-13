@@ -1,0 +1,7 @@
+.none {
+  color: transparent;
+}
+
+.reverseImage {
+  transform: rotate(180deg);
+}
