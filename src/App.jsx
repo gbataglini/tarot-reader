@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./App.css";
 import { cardActions } from "./api/cardActions";
 import TarotCard from "./components/TarotCard.jsx/TarotCard";
+import DefaultButton from "./components/DefaultButton/DefaultButton";
 
 function App() {
   const { getTarotCard } = cardActions();
@@ -17,11 +18,22 @@ function App() {
 
   return (
     <>
-      <button onClick={() => drawCard()}>Draw Card</button>
-
-      {drawnCards.length > 0 && (
-        <button onClick={() => setDrawnCards([])}>Restart Reading</button>
-      )}
+      <div className="row">
+        <DefaultButton
+          text={"Draw Card"}
+          onClick={() => drawCard()}
+          hasIcon
+          iconName="playingCard"
+        />
+        {drawnCards.length > 0 && (
+          <DefaultButton
+            text="restart reading"
+            onClick={() => setDrawnCards([])}
+            hasIcon
+            iconName="reset"
+          />
+        )}
+      </div>
 
       <div className="row">
         {drawnCards.length > 0 &&

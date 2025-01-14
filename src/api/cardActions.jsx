@@ -1,12 +1,8 @@
 export function cardActions() {
   function isReverse() {
-    let randomNum = Math.floor(Math.random() * (2 - 1 + 1)) + 1;
+    let randomNum = Math.floor(Math.random() * 100) % 3;
 
-    if (randomNum === 1) {
-      return true;
-    } else {
-      return false;
-    }
+    return randomNum === 0;
   }
 
   return {

@@ -1,0 +1,22 @@
+.blackButton {
+  background-color: black;
+  color: white;
+  border-radius: 5px;
+  padding: 10px;
+  min-width: 150px;
+  font-variant: small-caps;
+  font-size: medium;
+  font-weight: 400;
+  margin: 10px;
+  border: 1px black solid;
+  text-align: center;
+  &:hover {
+    cursor: pointer;
+    background-color: rgb(41, 10, 77);
+    color: white;
+  }
+}
+
+.icon {
+  margin: -4px 4px;
+}
