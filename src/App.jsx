@@ -17,6 +17,7 @@ function App() {
   const [loading, setLoading] = useState(false);
   const [aiReading, setAiReading] = useState(undefined);
   const [showCards, setShowCards] = useState(true);
+  const [isDrawCardClickable, setIsDrawCardClickable] = useState(true);
 
   const readingTypeOptions = [
     "Career",
@@ -32,6 +33,7 @@ function App() {
     let card = await getTarotCard(1);
     currentCards.push(card);
     setDrawnCards(currentCards);
+    setIsDrawCardClickable(true);
   }
 
   async function getAiReading() {
@@ -56,10 +58,13 @@ function App() {
         {aiReading === undefined && (
           <DefaultButton
             text={"Draw Card"}
-            onClick={() => drawCard()}
+            onClick={() => {
+              setIsDrawCardClickable(false);
+              drawCard();
+            }}
             hasIcon
             iconName="playingCard"
-            isDisabled={drawnCards.length > 5}
+            isDisabled={drawnCards.length > 5 || !isDrawCardClickable}
           />
         )}
         {drawnCards.length > 0 && (
